@@ -3,6 +3,17 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour {
 
+    public GameObject Oroka;
+
+    public GameObject fakeOroka;
+
+    public void Enter()
+    {
+        Invoke("closeOroka", 1);
+        Oroka.SetActive(true);
+        fakeOroka.SetActive(false);
+    }
+
     public void StartGame ()
     {
         SceneManager.LoadScene("Level 1");
@@ -24,4 +35,11 @@ public class Menu : MonoBehaviour {
         Application.Quit();
         Debug.Log("quit");
     }
+
+    public void closeOroka()
+    {
+        Oroka.SetActive(false);
+    }
+
+
 }
